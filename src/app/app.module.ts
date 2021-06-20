@@ -18,9 +18,10 @@ import { MenuComponent } from './menu/menu.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { SignupComponent } from './components/signup/signup.component';
+import {MatSelectModule} from '@angular/material/select';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +32,6 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     NavbarComponent,
     MenuComponent,
     MainContentComponent,
-    SignupComponent,
     SignUpComponent,
     EditProfileComponent
   ],
@@ -46,7 +46,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     MatIconModule,
     MatListModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
