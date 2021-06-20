@@ -5,7 +5,9 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Sign In</a>
+      <a mat-list-item href="signin">Sign In</a>
+      <a mat-list-item href="signup">Sign Up</a>
+      <a mat-list-item href="editprofile">Edit Profile</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,5 +23,6 @@
       <span>Nims Motor</span>
     </mat-toolbar>
     <!-- Add Content Here -->
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

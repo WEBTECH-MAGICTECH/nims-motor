@@ -11,21 +11,29 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { UseAllComponent } from './components/use-all/use-all.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 import { UserSingleComponent } from './components/user-single/user-single.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MenuComponent } from './menu/menu.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { SignupComponent } from './components/signup/signup.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyAppNavComponent,
-    UseAllComponent,
+    SignInComponent,
     UserSingleComponent,
     NavbarComponent,
     MenuComponent,
-    MainContentComponent
+    MainContentComponent,
+    SignupComponent,
+    SignUpComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,9 @@ import { MainContentComponent } from './main-content/main-content.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

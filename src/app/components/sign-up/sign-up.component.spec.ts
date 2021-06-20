@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UseAllComponent } from './use-all.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { SignUpComponent } from './sign-up.component';
 
-describe('UseAllComponent', () => {
-  let component: UseAllComponent;
-  let fixture: ComponentFixture<UseAllComponent>;
+describe('SignUpComponent', () => {
+  let component: SignUpComponent;
+  let fixture: ComponentFixture<SignUpComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UseAllComponent ]
+      declarations: [ SignUpComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UseAllComponent);
+    fixture = TestBed.createComponent(SignUpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
