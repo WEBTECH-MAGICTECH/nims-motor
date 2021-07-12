@@ -1,8 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {Component} from '@angular/core';
 
 import { SignInComponent } from './sign-in.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
 
 describe('SignInComponent', () => {
   let component: SignInComponent;
