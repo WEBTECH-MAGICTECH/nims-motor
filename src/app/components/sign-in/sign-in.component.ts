@@ -12,4 +12,10 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // get userLogin() {return this.loginForm.controls;}
+
+  onSubmit() {
+    // this.userLoginService.UserLogin(this.username.username.value, this.password.password.value)
+    console.log('onsubmit click');
+  }
 }
