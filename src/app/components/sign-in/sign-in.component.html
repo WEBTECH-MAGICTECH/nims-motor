@@ -5,57 +5,59 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="icon" href="https://png.pngtree.com/png-clipart/20191123/original/pngtree-hotel-building-vector-illustration-with-simple-design-hotel-icon-png-image_5194507.jpg"/>
+<link rel="icon"
+  href="https://png.pngtree.com/png-clipart/20191123/original/pngtree-hotel-building-vector-illustration-with-simple-design-hotel-icon-png-image_5194507.jpg" />
+
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>NIMS</b> HOTEL</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-        <a href="/src/app/app.component.html" class="w3-bar-item w3-button">Home</a>
-        <a href="#about" class="w3-bar-item w3-button">Rooms</a>
-        <a href="#contact" class="w3-bar-item w3-button">About</a>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <a href="#home" class="w3-bar-item w3-button"><b>NIMS</b> HOTEL</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+        <a routerLink="/" class="w3-bar-item w3-button">Home</a>
+        <!-- <a href="/src/app/app.component.html" class="w3-bar-item w3-button">Home</a> -->
+      </div>
     </div>
   </div>
-</div>
 
 
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
+  <!-- Page content -->
+  <div class="w3-content w3-padding" style="max-width:1564px">
 
-  <!-- Contact Section -->
-  <div class="w3-container w3-padding-32" id="contact">
-    <div class="w3-content w3-padding" style="max-width:700px">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Sign In</h3>
-    <form class="w3-container w3-card-4 w3-light-grey" target="_blank"><br>
+    <!-- Contact Section -->
+    <div class="w3-container w3-padding-32" id="contact">
+      <div class="w3-content w3-padding" style="max-width:700px">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Sign In</h3>
+        <form class="w3-container w3-card-4 w3-light-grey" target="_blank"><br>
 
-      <label>Username :</label><br>
-      <input class="w3-input w3-border" type="text" placeholder="Username" required name="username"><br>
+          <label>Username :</label><br>
+          <input class="w3-input w3-border" type="text" placeholder="Username" required name="username"><br>
 
-      <label>Password :</label><br>
-      <input class="w3-input w3-border" type="text" placeholder="Password" required name="password"><br>      
+          <label>Password :</label><br>
+          <input class="w3-input w3-border" type="text" placeholder="Password" required name="password"><br>
 
 
-      <button class="w3-button w3-black w3-section" type="submit" (click)="onSubmit()">
-        <i class="fa fa-paper-plane"></i> SUBMIT</button>
-        <div class="w-full text-center p-t-55">
+          <button class="w3-button w3-black w3-section" type="submit" (click)="onSubmit()">
+            <i class="fa fa-paper-plane"></i> SUBMIT</button>
+          <div class="w-full text-center p-t-55">
             <span class="txt2">
-                Not a member?
+              Not a member?
             </span>
 
             <a href="/src/app/components/sign-up/sign-up.component.html" class="txt2 bo1">
-                Sign up now
+              Sign up now
             </a><br><br>
-        </div>
-    </form>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-  </div>
 
 
 
-<!-- End page content -->
+  <!-- End page content -->
 </body>
+
 </html>

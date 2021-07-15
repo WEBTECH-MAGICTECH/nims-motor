@@ -4,7 +4,8 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 
 const routes: Routes = [
-  {path: '', component: MainPageComponent},
+  {path: '', redirectTo: '/main', pathMatch: 'full'},
+  {path: 'main', component: MainPageComponent},
   {path: 'login', component: SignInComponent}
 ];
 
