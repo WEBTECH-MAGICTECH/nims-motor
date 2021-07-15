@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MainPageComponent } from './components/main-page/main-page.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 const routes: Routes = [
-  {path: 'signin', component:SignInComponent},
-  {path: 'signup', component:SignUpComponent},
-  {path: 'editprofile', component:EditProfileComponent}
+  {path: '', component: MainPageComponent},
+  {path: 'login', component: SignInComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {enableTracing: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
