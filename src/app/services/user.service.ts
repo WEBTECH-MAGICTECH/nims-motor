@@ -7,7 +7,7 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl: string = 'https://localhost/nmapi';
+  baseUrl: string = 'https://localhost/nhapi';
 
   constructor(private http:HttpClient) { }
 
