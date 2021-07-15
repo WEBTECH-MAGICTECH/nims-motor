@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     SignInComponent,
     SignUpComponent,
     ProfileComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
