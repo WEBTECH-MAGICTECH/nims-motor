@@ -19,6 +19,11 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { AdminMainPageComponent } from './components/admin/admin-main-page/admin-main-page.component';
+import { AdminManageBookingComponent } from './components/admin/admin-manage-booking/admin-manage-booking.component';
+import { AdminManageCustomerComponent } from './components/admin/admin-manage-customer/admin-manage-customer.component';
+import { BookingComponent } from './components/booking/booking.component';
+import { RoomDetailsComponent } from './components/room-details/room-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { MainPageComponent } from './components/main-page/main-page.component';
     SignInComponent,
     SignUpComponent,
     ProfileComponent,
-    MainPageComponent
+    MainPageComponent,
+    AdminMainPageComponent,
+    AdminManageBookingComponent,
+    AdminManageCustomerComponent,
+    BookingComponent,
+    RoomDetailsComponent,
   ],
   imports: [
     BrowserModule,
