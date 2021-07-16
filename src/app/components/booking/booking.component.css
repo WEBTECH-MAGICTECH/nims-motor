@@ -1,0 +1,188 @@
+body {
+  /* background-image: url("hotel_image/interior/interior_view2.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.heading {
+  text-decoration: bold;
+  text-align: center;
+  font-size: 30px;
+  color: #F96;
+  padding-top: 10px;
+}
+
+.container {
+  font-family: Roboto, sans-serif;
+  background-image: url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg);
+
+  border-style: 1px solid grey;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0.8;
+  box-shadow: 1px 4px 5px 1px #eee;
+  max-width: 600px;
+  padding-top: 10px;
+  height: 680px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.roomtype {
+  margin-left: 16px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: white;
+  margin-top: 20px;
+}
+
+#roomtype {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.numofguest {
+  margin-left: 16px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: white;
+  margin-top: 20px;
+}
+
+#numofguest {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.checkindate {
+  margin-left: 16px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: white;
+  margin-top: 20px;
+}
+
+#checkindate {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.checkoutdate {
+  margin-left: 18px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: white;
+  margin-top: 20px;
+}
+
+#checkoutdate {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.paymenttype {
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-top: 13px;
+  margin-left: 40px;
+}
+
+#paymenttype {
+  margin-top: 8px;
+  margin-bottom: 3px;
+}
+
+.creditcardno {
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-left: 17px;
+}
+
+#creditcardno {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.cardholdername {
+  font-size: 14px;
+  font-family: sans-serif;
+  margin-top: 20px;
+  color: white;
+  margin-left: 48px;
+
+}
+
+#cardholdername {
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.expirydate {
+  margin-left: 52px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: white;
+  margin-top: 20px;
+}
+
+#expirydate {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cvc {
+  margin-left: 35px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: white;
+  margin-top: 20px;
+}
+
+#cvc {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.sbutton {
+  color: white;
+  font-size: 20px;
+  border: 1px solid white;
+  background-color: #080808;
+  width: 32%;
+  margin-left: 41%;
+  margin-top: 16px;
+  box-shadow: 0px 2px 2px 0px white;
+}
+
+.btn.btn-warning:hover {
+  box-shadow: 2px 1px 2px 3px #99ccff;
+  background: #5900a6;
+  color: #fff;
+  transition: background-color 1.15s ease-in-out, border-color 1.15s ease-in-out, box-shadow 1.15s ease-in-out;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  color: aliceblue;
+  display: none;
+  position: absolute;
+  background-color: #3d3f44;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

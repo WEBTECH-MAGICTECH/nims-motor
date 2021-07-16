@@ -1,11 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { AdminMainPageComponent } from './components/admin/admin-main-page/admin-main-page.component';
+import { AdminManageBookingComponent } from './components/admin/admin-manage-booking/admin-manage-booking.component';
+import { AdminManageCustomerComponent } from './components/admin/admin-manage-customer/admin-manage-customer.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { BookingComponent } from './components/booking/booking.component';
 
 const routes: Routes = [
-  {path: '', component: MainPageComponent},
-  {path: 'login', component: SignInComponent}
+  {path: '', redirectTo: '/main', pathMatch: 'full'},
+  {path: 'main', component: MainPageComponent},
+  {path: 'adminmain', component: AdminMainPageComponent},
+  {path: 'adminmanagebooking', component: AdminManageBookingComponent},
+  {path: 'adminmanagecustomer', component: AdminManageCustomerComponent},
+  {path: 'signin', component: SignInComponent},
+  {path: 'signup', component: SignUpComponent},
+  {path: 'room-details', component: RoomDetailsComponent},
+  {path: 'booking', component: BookingComponent}
 ];
 
 @NgModule({
