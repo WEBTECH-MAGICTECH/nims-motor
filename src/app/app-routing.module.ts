@@ -17,12 +17,12 @@ const routes: Routes = [
   {path: 'adminmanagecustomer', component: AdminManageCustomerComponent},
   {path: 'signin', component: SignInComponent},
   {path: 'signup', component: SignUpComponent},
-  {path: 'room-details', component: RoomDetailsComponent},
+  {path: 'roomdetails', component: RoomDetailsComponent},
   {path: 'booking', component: BookingComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing: true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

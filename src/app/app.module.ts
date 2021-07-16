@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -24,6 +24,7 @@ import { AdminManageBookingComponent } from './components/admin/admin-manage-boo
 import { AdminManageCustomerComponent } from './components/admin/admin-manage-customer/admin-manage-customer.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { RoomDetailsComponent } from './components/room-details/room-details.com
     MatInputModule,
     MatSelectModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
