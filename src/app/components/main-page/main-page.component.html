@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 <html>
 <title>NIMS HOTEL</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <link rel="icon"
   href="https://png.pngtree.com/png-clipart/20191123/original/pngtree-hotel-building-vector-illustration-with-simple-design-hotel-icon-png-image_5194507.jpg" />
 
 <body>
-
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">
       <a routerLink="/main" class="w3-bar-item w3-button"><b>NIMS</b> HOTEL</a>
       <!-- Float links to the right. Hide them on small screens -->
       <div class="w3-right w3-hide-small">
-        <a href="#home" class="w3-bar-item w3-button">Home</a>
-        <a href="#about" class="w3-bar-item w3-button">Rooms</a>
-        <a routerLink="main/#about" class="w3-bar-item w3-button">About</a>
-        <a href="/profile" class="w3-bar-item w3-button">Profile</a>
-        <a routerLink="/signin" class="w3-bar-item w3-button">Sign In</a>
+        <div *ngIf="!user; else elseBlock">
+          <a href="#home" class="w3-bar-item w3-button">Home</a>
+          <a href="#about" class="w3-bar-item w3-button">Rooms</a>
+          <a routerLink="main/#about" class="w3-bar-item w3-button">About</a>
+          <a href="/profile" class="w3-bar-item w3-button">Profile</a>
+          <a routerLink="/signin" class="w3-bar-item w3-button">Sign In</a>
+        </div>
+        <ng-template #elseBlock>
+          <a href="#home" class="w3-bar-item w3-button">Home</a>
+          <a href="#about" class="w3-bar-item w3-button">Rooms</a>
+          <a routerLink="main/#about" class="w3-bar-item w3-button">About</a>
+          <a href="/profile" class="w3-bar-item w3-button">Profile</a>
+          <a routerLink="/signin" (click)="onSignOut()" class="w3-bar-item w3-button">Sign Out</a>
+        </ng-template>
       </div>
     </div>
   </div>
 
   <!-- Header -->
-  <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <header class="w3-display-container w3-content w3-wide" style="max-width: 1500px" id="home">
     <img class="w3-image" src="https://www.oneandonlyresorts.com/-/media/C85BB33080204166AABD98855B3B061A.jpg"
-      alt="Architecture" width="1500" height="800">
+      alt="Architecture" width="1500" height="800" />
     <div class="w3-display-middle w3-margin-top w3-center">
-      <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>NIMS HOTEL</b></span>
+      <h1 class="w3-xxlarge w3-text-white">
+        <span class="w3-padding w3-black w3-opacity-min"><b>NIMS HOTEL</b></span>
         <span class="w3-hide-small w3-text-light-grey"></span>
       </h1>
     </div>
   </header>
 
   <!-- Page content -->
-  <div class="w3-content w3-padding" style="max-width:1564px">
-
+  <div class="w3-content w3-padding" style="max-width: 1564px">
     <!-- Project Section -->
     <div class="w3-container w3-padding-32" id="Specialties">
-      <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16">Specialties</h1>
+      <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">
+        SPECIALTIES
+      </h1>
     </div>
     <div class="w3-row-padding">
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-display-container">
           <div class="w3-display-topleft w3-black w3-padding">Front View</div>
-          <img src="https://i.ibb.co/7g3KJ0r/OO-1.jpg"
-            alt="House" style="width:100%">
+          <img src="https://i.ibb.co/7g3KJ0r/OO-1.jpg" alt="House" style="width: 100%" />
         </div>
       </div>
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-display-container">
           <div class="w3-display-topleft w3-black w3-padding">Room View</div>
-          <img
-            src="https://i.ibb.co/RHJs0CM/OO-2.jpg"
-            alt="House" style="width:100%">
+          <img src="https://i.ibb.co/RHJs0CM/OO-2.jpg" alt="House" style="width: 100%" />
         </div>
       </div>
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-display-container">
           <div class="w3-display-topleft w3-black w3-padding">Main View</div>
-          <img src="https://i.ibb.co/b6NqnDZ/OO-3.jpg" alt="House" style="width:100%">
+          <img src="https://i.ibb.co/b6NqnDZ/OO-3.jpg" alt="House" style="width: 100%" />
         </div>
       </div>
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-display-container">
           <div class="w3-display-topleft w3-black w3-padding">Main Pool</div>
-          <img src="https://i.ibb.co/R027QVw/OO-4.jpg" alt="OO-4" alt="House"
-            style="width:100%">
+          <img src="https://i.ibb.co/R027QVw/OO-4.jpg" alt="OO-4" alt="House" style="width: 100%" />
         </div>
       </div>
     </div>
@@ -77,94 +83,144 @@
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-display-container">
           <div class="w3-display-topleft w3-black w3-padding">Coast View</div>
-          <img src="https://i.ibb.co/9sThnbg/OO-5.jpg" alt="OO-5" alt="House" style="width:100%">
+          <img src="https://i.ibb.co/9sThnbg/OO-5.jpg" alt="OO-5" alt="House" style="width: 100%" />
         </div>
       </div>
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Personal Pool</div>
-          <img src="https://i.ibb.co/hWzQgBD/OO-7.jpg" alt="House" style="width:100%">
+          <div class="w3-display-topleft w3-black w3-padding">
+            Personal Pool
+          </div>
+          <img src="https://i.ibb.co/hWzQgBD/OO-7.jpg" alt="House" style="width: 100%" />
         </div>
       </div>
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Leisure Garden</div>
-          <img src="https://i.ibb.co/rc53zYg/OO-8.jpg" alt="House" style="width:100%">
+          <div class="w3-display-topleft w3-black w3-padding">
+            Leisure Garden
+          </div>
+          <img src="https://i.ibb.co/rc53zYg/OO-8.jpg" alt="House" style="width: 100%" />
         </div>
       </div>
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-display-container">
           <div class="w3-display-topleft w3-black w3-padding">Spa House</div>
-          <img src="https://i.ibb.co/CPFQ6cW/OO-9.jpg" alt="House" style="width:100%">
+          <img src="https://i.ibb.co/CPFQ6cW/OO-9.jpg" alt="House" style="width: 100%" />
         </div>
       </div>
     </div>
 
     <!-- About Section -->
     <div class="w3-container w3-padding-32" id="about">
-      <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.
+      <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">
+        ABOUT
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
       </p>
     </div>
 
-
     <div class="w3-container w3-padding-32" id="rooms">
-      <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16">Rooms</h1>
-    <div class="w3-row-padding">
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <img src="https://i.ibb.co/0XssRs8/ROOM-OO-MAIN-SUITE-KING.jpg"
-          alt="House" style="width:100%">
-        <h2>Suite King</h2>
-        <p class="w3-opacity">Your Tropical Sanctuary</p>
-        <p>A joyful hideaway immersed in tropical greenery and beautifully set up for sociable days. Idle afternoons away on a tropical veranda, dip in the private plunge pool, float away on a carefree cloud.</p>
-        <p><button class="w3-button w3-light-grey w3-block">Book</button></p>
+      <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">
+        ROOMS
+      </h1>
+      <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <img src="https://i.ibb.co/0XssRs8/ROOM-OO-MAIN-SUITE-KING.jpg" alt="House" style="width: 100%" />
+          <h2>Suite King</h2>
+          <p class="w3-opacity">Your Tropical Sanctuary</p>
+          <p>
+            A joyful hideaway immersed in tropical greenery and beautifully
+            set up for sociable days. Idle afternoons away on a tropical
+            veranda, dip in the private plunge pool, float away on a carefree
+            cloud.
+          </p>
+          <p>
+            <button class="w3-button w3-light-grey w3-block">Book</button>
+          </p>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <img src="https://i.ibb.co/b61crPJ/ROOM-OO-MAIN-OCEAN-SUITE.jpg" alt="Jane" style="width: 100%" />
+          <h2>Ocean Suite</h2>
+          <p class="w3-opacity">A Verdant Oasis</p>
+          <p>
+            Wake to exhilarating sea breezes and unobstructed views of the
+            South China Sea. This one-bedroom suite features a plunge pool,
+            spacious bathroom and airy interiors, creating ultimate privacy
+            and serenity.
+          </p>
+          <p>
+            <button class="w3-button w3-light-grey w3-block">Book</button>
+          </p>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <img src="https://i.ibb.co/Vt5N47D/ROOM-OO-MAIN-SUPER-DELUXE.jpg" alt="Mike" style="width: 100%" />
+          <h2>Super Deluxe</h2>
+          <p class="w3-opacity">Idyllic Hideaway</p>
+          <p>
+            Put yourself on the fringe of the ocean, sleep to the hush of the
+            waves, run down to the beach in the morning for a fresh dip. This
+            one-bedroom suite has a plunge pool, serene style and NIMS butler
+            service.
+          </p>
+          <p>
+            <button class="w3-button w3-light-grey w3-block">Book</button>
+          </p>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <img src="https://i.ibb.co/7W8NShn/ROOM-OO-MAIN-DELUXE.jpg" alt="Dan" style="width: 100%" />
+          <h2>Deluxe</h2>
+          <p class="w3-opacity">Picture-Perfect Sunrise</p>
+          <p>
+            The grand veranda opens up to an azure horizon, in a few steps you
+            are barefoot on powder white sands by the South China Sea with a
+            serene deluxe room that you can relax all day long.
+          </p>
+          <p>
+            <button class="w3-button w3-light-grey w3-block">Book</button>
+          </p>
+        </div>
       </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <img src="https://i.ibb.co/dgTqRff/ROOM-OO-MAIN-OCEAN-SUITE.jpg"
-          alt="Jane" style="width:100%">
-        <h2>Ocean Suite</h2>
-        <p class="w3-opacity">A Verdant Oasis</p>
-        <p>Wake to exhilarating sea breezes and unobstructed views of the South China Sea. This one-bedroom suite features a plunge pool, spacious bathroom and airy interiors, creating ultimate privacy and serenity.</p>
-        <p><button class="w3-button w3-light-grey w3-block">Book</button></p>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <img src="https://i.ibb.co/Vt5N47D/ROOM-OO-MAIN-SUPER-DELUXE.jpg"
-          alt="Mike" style="width:100%">
-        <h2>Super Deluxe</h2>
-        <p class="w3-opacity">Idyllic Hideaway</p>
-        <p>Put yourself on the fringe of the ocean, sleep to the hush of the waves, run down to the beach in the morning for a fresh dip. This one-bedroom suite has a plunge pool, serene style and NIMS butler service.</p>
-        <p><button class="w3-button w3-light-grey w3-block">Book</button></p>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <img src="https://i.ibb.co/7W8NShn/ROOM-OO-MAIN-DELUXE.jpg" alt="Dan"
-          style="width:100%">
-        <h2>Deluxe</h2>
-        <p class="w3-opacity">Picture-Perfect Sunrise</p>
-        <p>Wake to exhilarating sea breezes and unobstructed views of the South China Sea. This one-bedroom suite features a plunge pool, spacious bathroom and airy interiors, creating ultimate privacy and serenity.</p>
-        <p><button class="w3-button w3-light-grey w3-block">Book</button></p>
-      </div>
-    </div>
 
-      <!-- Image of location/map -->
-
+      <!-- Contact Section -->
+      <div class="w3-container w3-padding-32" id="contact">
+        <h1 class="
+              w3-border-bottom w3-border-light-grey w3-padding-16 w3-center
+            ">
+          CONTACT
+        </h1>
+        <p>Any enquiries.</p>
+        <form action="/action_page.php" target="_blank">
+          <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name" />
+          <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email" />
+          <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject" />
+          <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment" />
+          <button class="w3-button w3-black w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </form>
+      </div>
 
       <!-- End page content -->
     </div>
   </div>
 
-
   <!-- Footer -->
   <footer class="w3-center w3-black w3-padding-16">
-    <p>All Rights Reserved © 2021 <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
-        class="w3-hover-text-grey">MAGIC-TECH</a></p>
+    <p>
+      All Rights Reserved © 2021
+      <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+        class="w3-hover-text-grey">MAGIC-TECH</a>
+    </p>
   </footer>
-
 </body>
 
 </html>
