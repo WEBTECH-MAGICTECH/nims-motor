@@ -75,7 +75,8 @@
               "browserTarget": "nims-motor:build:production"
             },
             "development": {
-              "browserTarget": "nims-motor:build:development"
+              "browserTarget": "nims-motor:build:development",
+              "proxyConfig": "./proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
