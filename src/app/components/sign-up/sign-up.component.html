@@ -31,30 +31,34 @@
     <div class="w3-container w3-padding-32" id="contact">
       <div class="w3-content w3-padding" style="max-width:700px">
         <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">SIGN UP</h1>
-        <form class="w3-container w3-card-4 w3-light-grey"><br>
+        <form class="w3-container w3-card-4 w3-light-grey" (ngSubmit)="onSubmit()"><br>
           <label>Name :</label>
-          <input class="w3-input w3-border" type="text" placeholder="Name" required name="name"><br>
+          <input class="w3-input w3-border" type="text" placeholder="Name" required name="name" [(ngModel)]="name"><br>
 
           <label>Email :</label><br>
-          <input class="w3-input w3-border" type="text" placeholder="Email" required name="email"><br>
+          <input class="w3-input w3-border" type="text" placeholder="Email" required name="email"
+            [(ngModel)]="email"><br>
 
-          <label>Phone:</label><br>
-          <input class="w3-input w3-border" type="text" placeholder="Phone" required name="phone"><br>
+          <label>Phone :</label><br>
+          <input class="w3-input w3-border" type="text" placeholder="Phone" required name="phone"
+            [(ngModel)]="phone"><br>
 
           <label>Username :</label><br>
-          <input class="w3-input w3-border" type="text" placeholder="Username" required name="username"><br>
+          <input class="w3-input w3-border" type="text" placeholder="Username" required name="username"
+            [(ngModel)]="username"><br>
 
           <label>Password :</label><br>
-          <input class="w3-input w3-border" type="password" placeholder="Password" required name="password"><br>
+          <input class="w3-input w3-border" type="password" placeholder="Password" required name="password"
+            [(ngModel)]="password"><br>
 
           <label>Gender :</label><br>
-          <select class="w3-select w3-border" name="gender">
+          <select class="w3-select w3-border" name="gender" [(ngModel)]="gender">
             <option value="Female">Female</option>
             <option value="Male">Male</option>
           </select><br><br>
 
           <label>User Type :</label><br>
-          <select class="w3-select w3-border" name="user_type">
+          <select class="w3-select w3-border" name="user_type" [(ngModel)]="user_type">
             <option value="Customer">Customer</option>
             <option value="Staff">Staff</option>
           </select><br><br>
