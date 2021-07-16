@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import { HttpClient, HttpParams, HttpErrorResponse } from "@angular/common/http";
+import { map, retry, catchError } from "rxjs/operators";
 import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl: string = 'https://localhost/nhapi';
+  baseUrl: string = 'https://localhost/nhapi/user';
 
   constructor(private http:HttpClient) { }
 
@@ -15,7 +16,35 @@ export class UserService {
     return this.http.get<User[]>(this.baseUrl + endpoint);
   }
 
-  userLogin(endpoint: string): Observable<User> {
-    return this.http.get<User>(this.baseUrl + endpoint);
+  userLogin(username: string, password: string): Observable<User> {
+
+    return this.http.get<User>(this.baseUrl + '/' + username + '/' + password)
+      .pipe(
+        map((user) => {
+          // console.log(user);
+
+          return user;
+        }),
+        retry(3),
+        catchError(this.handleError)
+      );
+  }
+
+  createUser(user: User): Observable<User>{
+    return this.http.post<User>(this.baseUrl + '/newuser', user)
+      .pipe(
+        map(user => {
+          console.log(user);
+
+          return user;
+        }),
+        retry(3),
+        catchError(this.handleError)
+      );
+  }
+
+  private handleError(error: HttpErrorResponse){
+    console.log('Retry 3 times. Failed');
+    return throwError(error);
   }
 }
