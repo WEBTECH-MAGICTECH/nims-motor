@@ -1,11 +1,11 @@
 export class User {
-  userID?: number;
+  id?: number;
   name?: string;
   phone?: string;
   email?: string;
   username?: string;
   password?: String;
   gender?: String;
-  userType?: String;
-  userImage?: string;
+  user_type?: String;
+  user_image?: string;
 }
