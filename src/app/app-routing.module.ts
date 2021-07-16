@@ -8,6 +8,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { BookingComponent } from './components/booking/booking.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'signin', component: SignInComponent},
   {path: 'signup', component: SignUpComponent},
   {path: 'roomdetails', component: RoomDetailsComponent},
-  {path: 'booking', component: BookingComponent}
+  {path: 'booking', component: BookingComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
