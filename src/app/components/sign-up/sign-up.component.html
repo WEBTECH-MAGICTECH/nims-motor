@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="icon"
-  href="https://png.pngtree.com/png-clipart/20191123/original/pngtree-hotel-building-vector-illustration-with-simple-design-hotel-icon-png-image_5194507.jpg" />
 
 <body>
 
@@ -15,9 +13,7 @@
       <a href="#home" class="w3-bar-item w3-button"><b>NIMS</b> HOTEL</a>
       <!-- Float links to the right. Hide them on small screens -->
       <div class="w3-right w3-hide-small">
-        <a href="/src/app/app.component.html" class="w3-bar-item w3-button">Home</a>
-        <a href="#about" class="w3-bar-item w3-button">Rooms</a>
-        <a href="#contact" class="w3-bar-item w3-button">About</a>
+        <a routerLink="/main" class="w3-bar-item w3-button">Home</a>
       </div>
     </div>
   </div>
@@ -27,8 +23,8 @@
   <div class="w3-content w3-padding" style="max-width:1564px">
 
     <!-- Contact Section -->
-    <br><br>
-    <div class="w3-container w3-padding-32" id="contact">
+    <br><br><br>
+    <div class="w3-container w3-padding-0">
       <div class="w3-content w3-padding" style="max-width:700px">
         <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">SIGN UP</h1>
         <form class="w3-container w3-card-4 w3-light-grey" (ngSubmit)="onSubmit()"><br>
@@ -63,6 +59,7 @@
             <option value="Staff">Staff</option>
           </select><br><br>
 
+          <div class="w3-center">
           <button class="w3-button w3-black w3-section" type="submit">
             <i class="fa fa-paper-plane"></i> SUBMIT</button><br>
           <span class="txt2">
@@ -72,6 +69,7 @@
           <a routerLink="/signin" class="txt2 bo1">
             Sign in now
           </a><br><br>
+        </div>
         </form>
       </div>
     </div>
