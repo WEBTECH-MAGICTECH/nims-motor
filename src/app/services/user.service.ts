@@ -21,8 +21,9 @@ export class UserService {
     return this.http.get<User>(this.baseUrl + '/' + username + '/' + password)
       .pipe(
         map((user) => {
-          // console.log(user);
-
+          // console.log('user service' + user);
+          localStorage.removeItem('auth_user');
+          localStorage.setItem('auth_user', JSON.stringify(user));
           return user;
         }),
         retry(3),
@@ -43,6 +44,10 @@ export class UserService {
         retry(3),
         catchError(this.handleError)
       );
+  }
+
+  onLogout() {
+    localStorage.removeItem('auth_user');
   }
 
   private handleError(error: HttpErrorResponse){

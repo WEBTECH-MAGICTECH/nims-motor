@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -21,7 +22,8 @@ export class SignUpComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private route: Router
   ) { }
 
   ngOnInit(): void {
@@ -46,6 +48,12 @@ export class SignUpComponent implements OnInit {
         user => {
           this.user = user;
           console.log(this.user);
+          if(this.user != false || this.user != null){
+            this.route.navigate(['signin']);
+          }
+          else {
+            alert('Sign Up Failed, Please check your details');
+          }
         }
       );
     }
