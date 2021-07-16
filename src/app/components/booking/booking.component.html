@@ -29,45 +29,71 @@
     <!-- Contact Section -->
     <br><br>
     <div class="w3-container w3-padding-32" id="contact">
-      <div class="w3-content w3-padding " style="max-width:1200px">
+      <div class="w3-content w3-padding " style="max-width:700px">
         <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">BOOKING</h1>
-        <div class="w3-container w3-card-4 w3-light-grey" target="_blank"><br>
+        <form class="w3-container w3-card-4 w3-light-grey"><br>
+          <label>Booking Date :</label>
+          <input class="w3-input w3-border" type="text" placeholder="Name" required name="booking_date"><br>
 
-          <div class="w3-row w3-border">
-            <div class="w3-half w3-container w3-blue w3-border">
-              <h5>w3-half</h5>
-              <p>The w3-half class uses half (50%) of the screen window.</p>
-              <p>On small screens (max 600 pixels) it automatically resizes to full screen width.</p>
-            </div>
-            <div class="w3-half w3-container">
-              <h5>w3-half</h5>
-            </div>
-          </div>
+          <label>Start Date :</label><br>
+          <input class="w3-input w3-border" type="text" placeholder="Email" required name="email"><br>
 
-          <label>Username :</label><br>
+          <label>End Date :</label><br>
+          <input class="w3-input w3-border" type="text" placeholder="Phone" required name="phone"><br>
+
+          <label>Booking Status :</label><br>
           <input class="w3-input w3-border" type="text" placeholder="Username" required name="username"><br>
 
           <label>Password :</label><br>
-          <input class="w3-input w3-border" type="text" placeholder="Password" required name="password"><br>
+          <input class="w3-input w3-border" type="password" placeholder="Password" required name="password"><br>
 
+          <label>Gender :</label><br>
+          <select class="w3-select w3-border" name="gender">
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+          </select><br><br>
 
-          <button class="w3-button w3-black w3-section" type="submit">
-            <i class="fa fa-paper-plane"></i> SUBMIT</button>
-          <div class="w-full text-center p-t-55">
+          <label>User Type :</label><br>
+          <select class="w3-select w3-border" name="user_type">
+            <option value="Customer">Customer</option>
+            <option value="Staff">Staff</option>
+          </select><br><br>
+
+          <div class="w3-center">
+            <button class="w3-button w3-black w3-section" type="submit">
+              <i class="fa fa-paper-plane"></i> SUBMIT</button><br>
             <span class="txt2">
-              Not a member?
+              Already have an account?
             </span>
 
-            <a routerLink="/signup" class="txt2 bo1">
-              Sign up now
-            </a>
-            <br><br>
+            <a class="txt2 bo1">
+              Book Now
+            </a><br><br>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
 
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = x.length }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      x[slideIndex - 1].style.display = "block";
+    }
+  </script>
 
 
   <!-- End page content -->
