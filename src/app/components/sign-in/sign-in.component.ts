@@ -32,7 +32,11 @@ export class SignInComponent implements OnInit {
     this.userService.userLogin(this.username, this.password)
       .subscribe((user) => {
         this.user = user;
-        if(this.user != null) this.route.navigate(['main']);
+        if(this.user != null) {
+          if(this.user.user_type == 'Customer')
+            this.route.navigate(['main']);
+          else this.route.navigate(['adminmain']);
+        }
         console.log(this.user);
       });
   }
