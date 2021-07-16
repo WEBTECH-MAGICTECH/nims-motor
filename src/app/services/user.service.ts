@@ -8,7 +8,7 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl: string = 'https://localhost/nhapi/user';
+  baseUrl: string = '/nhapi/user';
 
   constructor(private http:HttpClient) { }
 
@@ -31,6 +31,8 @@ export class UserService {
   }
 
   createUser(user: User): Observable<User>{
+    console.log(user);
+
     return this.http.post<User>(this.baseUrl + '/newuser', user)
       .pipe(
         map(user => {
