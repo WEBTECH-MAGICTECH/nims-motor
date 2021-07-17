@@ -22,8 +22,8 @@
         </div>
         <ng-template #elseBlock>
           <a href="#home" class="w3-bar-item w3-button">Home</a>
-          <a href="#about" class="w3-bar-item w3-button">Rooms</a>
-          <a routerLink="main/#about" class="w3-bar-item w3-button">About</a>
+          <a routerLink="/roomdetails" class="w3-bar-item w3-button">Rooms</a>
+          <a routerLink="/booking" class="w3-bar-item w3-button">Booking</a>
           <a href="/profile" class="w3-bar-item w3-button">Profile</a>
           <a routerLink="/signin" (click)="onSignOut()" class="w3-bar-item w3-button">Sign Out</a>
         </ng-template>
@@ -116,9 +116,11 @@
       </h1>
       <h3>YOUR ESCAPE AWAITS</h3>
       <p>
-        At home in the world's most inspiring locations, hand-picked for exceptional beauty and unique cultural charm,<br>
+        At home in the world's most inspiring locations, hand-picked for exceptional beauty and unique cultural
+        charm,<br>
         NIMS HOTEL are havens of outstanding style and service that place you in the heart of<br>
-        every fascinating environment. With incredible tailored experiences across beach, nature, and urban locations,<br>
+        every fascinating environment. With incredible tailored experiences across beach, nature, and urban
+        locations,<br>
         and spectacular spaces to simply 'be'; unforgettable moments begin at NIMS HOTEL.<br>
       </p>
     </div>
@@ -128,21 +130,18 @@
         ROOMS
       </h1>
       <div class="w3-row-padding">
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <img src="https://i.ibb.co/0XssRs8/ROOM-OO-MAIN-SUITE-KING.jpg" alt="House" style="width: 100%" />
-          <h2>Suite King</h2>
+        <div class="w3-col l3 m6 w3-margin-bottom" *ngFor="let room of rooms">
+          <img src="{{ room.room_image_1 }}" alt="House" style="width: 100%" />
+          <h2>{{ room.room_name }}</h2>
           <p class="w3-opacity">Your Tropical Sanctuary</p>
           <p>
-            A joyful hideaway immersed in tropical greenery and beautifully
-            set up for sociable days. Idle afternoons away on a tropical
-            veranda, dip in the private plunge pool, float away on a carefree
-            cloud.
+            {{ room.room_description }}
           </p>
           <p>
             <button class="w3-button w3-light-grey w3-block">Book</button>
           </p>
         </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
+        <!-- <div class="w3-col l3 m6 w3-margin-bottom">
           <img src="https://i.ibb.co/b61crPJ/ROOM-OO-MAIN-OCEAN-SUITE.jpg" alt="Jane" style="width: 100%" />
           <h2>Ocean Suite</h2>
           <p class="w3-opacity">A Verdant Oasis</p>
@@ -182,7 +181,7 @@
           <p>
             <button class="w3-button w3-light-grey w3-block">Book</button>
           </p>
-        </div>
+        </div> -->
       </div>
 
       <!-- Contact Section -->
