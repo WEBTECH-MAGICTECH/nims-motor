@@ -10,15 +10,42 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-manage-customer.component.css']
 })
 export class AdminManageCustomerComponent implements OnInit {
+  id: string = '';
+  name: string = '';
+  gender: string = '';
+  phone: string = '';
+  email: string = '';
+  username: string = '';
+  user_type: string = '';
 
+  users: User[] = [];
+
+
+  //Dependency-Injection
   constructor(
     private userService: UserService,
     private route: Router
   ) { }
 
   ngOnInit(): void {
+    this.onLoadPage();
   }
 
   onSubmit(){}
+
+  onLoadPage() {
+    this.userService.getUsersTypeCustomer().subscribe(
+      users => {
+        console.log(users);
+        this.users = users;
+      }
+    );
+  }
+
+  onClickDelete(id?: number) {
+    this.userService.deleteUser(id).subscribe();
+    // this.route.navigate(['adminmanagecustomer']);
+    window.location.reload();
+  }
 
 }

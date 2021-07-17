@@ -4,5 +4,7 @@ export class Room {
     room_type?: string;
     room_price?: string;
     room_description?: string;
-    room_image?: string;
+    room_image_1?: string;
+    room_image_2?: string;
+    room_image_3?: string;
   }
