@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpParams, HttpErrorResponse } from "@angular/common/http";
 import { map, retry, catchError } from "rxjs/operators";
-import { User } from '../models/user';
 import { Booking } from '../models/booking';
 
 @Injectable({
@@ -13,16 +12,48 @@ export class BookingService {
 
     constructor(private http:HttpClient) { }
 
-    getBooking(endpoint: string): Observable<Booking[]> {
-        return this.http.get<Booking[]>(this.baseUrl + endpoint);
+    getBookingList(): Observable<Booking[]> {
+        return this.http.get<Booking[]>(this.baseUrl)
+        .pipe(
+          map((bookings) => {
+            // console.log('user service' + user);
+            localStorage.removeItem('bookings');
+            localStorage.setItem('bookings', JSON.stringify(bookings));
+            return bookings;
+          }),
+          retry(3),
+          catchError(this.handleError)
+        );
       }
 
-    deleteBooking() {
+    createBooking(booking: Booking): Observable<Booking>{
+      console.log(booking);
 
-      }
+      return this.http.post<Booking>(this.baseUrl + '/newbooking', booking)
+        .pipe(
+          map(booking => {
+            console.log(booking);
 
-    updateBooking() {
+            return booking;
+          }),
+          retry(3),
+          catchError(this.handleError)
+        );
+    }
 
+    // updateBooking(booking_status: any, booking_id?: number){
+    //   console.log(booking_status);
+    //   console.log(booking_id);
+
+
+    // }
+    updateBooking(booking_status: any, booking_id?: number): Observable<Booking>{
+      return this.http.put(this.baseUrl + '/status/' + booking_id, booking_status);
+    }
+
+    private handleError(error: HttpErrorResponse){
+      console.log('Retry 3 times. Failed');
+      return throwError(error);
     }
 
 }
