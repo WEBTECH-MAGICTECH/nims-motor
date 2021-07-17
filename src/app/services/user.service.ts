@@ -12,8 +12,8 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  getUsers(endpoint: string): Observable<User[]> {
-    return this.http.get<User[]>(this.baseUrl + endpoint);
+  getUsersTypeCustomer(): Observable<User[]> {
+    return this.http.get<User[]>(this.baseUrl+'/customer');
   }
 
   userLogin(username: string, password: string): Observable<User> {
@@ -42,6 +42,13 @@ export class UserService {
           return user;
         }),
         retry(3),
+        catchError(this.deleteError)
+      );
+  }
+
+  deleteUser(id?: number) {
+    return this.http.delete(this.baseUrl+'/'+id)
+      .pipe(
         catchError(this.handleError)
       );
   }
@@ -52,6 +59,11 @@ export class UserService {
 
   private handleError(error: HttpErrorResponse){
     console.log('Retry 3 times. Failed');
+    return throwError(error);
+  }
+
+  private deleteError(error: HttpErrorResponse) {
+    console.log('Delete Failed');
     return throwError(error);
   }
 }
