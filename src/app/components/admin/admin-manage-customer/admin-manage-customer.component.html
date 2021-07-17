@@ -44,14 +44,16 @@
               <th>No. Phone</th>
               <th>Email</th>
               <th>Username</th>
+              <th>Action</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>Name</td>
-              <td>Gender</td>
-              <td>No. Phone</td>
-              <td>Email</td>
-              <td>Username</td>
+            <tr *ngFor="let user of users">
+              <td>{{ user.id }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.gender }}</td>
+              <td>{{ user.phone }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.username }}</td>
+              <td><button type="button" (click)="onClickDelete(user.id)">Delete</button></td>
             </tr>
           </table>
         </div>

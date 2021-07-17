@@ -28,33 +28,66 @@
   </div>
 
   <!-- Content -->
-  <div class="w3-content" style="max-width:1100px;margin-top:30px;margin-bottom:80px">
-    <div class="w3-center w3-padding-64">
+  <div class="w3-content" style="max-width:1200px;margin-top:30px;margin-bottom:80px">
+    <div class=" w3-center w3-padding-64">
       <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Manage Booking</span>
     </div>
     <!-- Table -->
     <div class="w3-center">
       <div class="w3-row w3-large w3-light-grey" id="corner">
-        <div class="w3-content w3-padding" style="max-width:700px">
+        <div class="w3-content w3-padding" style="max-width:1200px">
           <table>
             <tr>
               <th>Booking Id</th>
-              <th>Booking Date</th>
-              <th>Start Date</th>
-              <th>End Date</th>
+              <th>User Id</th>
+              <th>Room Name</th>
+              <th>Check-In Date</th>
+              <th>Check-Out Date</th>
+              <th>Payment Type</th>
+              <th>Amount</th>
               <th>Booking Status</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>7-10-2021</td>
-              <td>8-10-2021</td>
-              <td>12-10-2021</td>
+            <tr *ngFor="let booking of bookings">
+              <td>{{ booking.booking_id }}</td>
+              <td>{{ booking.user_id }}</td>
+              <td>{{ booking.room_name }}</td>
+              <td>{{ booking.checkin_date | date}}</td>
+              <td>{{ booking.checkout_date | date }}</td>
+              <td>{{ booking.payment_type }}</td>
+              <td>{{ booking.amount }}</td>
               <td>
-                <select class="w3-select w3-border" name="booking_status">
-                  <option value="Check-In">Check-In</option>
-                  <option value="Check-Out">Check-Out</option>
-                  <option value="Cancelled">Cancelled</option>
-                </select>
+                <div *ngIf="booking.booking_status == 'Pending'">
+                  <!-- <select class="w3-select w3-border" name="booking_status" [ngModel]="booking_status"
+                    (ngModelChange)="onChangeStatus($event)"> -->
+                  <select class="w3-select w3-border" name="booking_status"
+                    (change)="onChangeStatus($event, booking.booking_id)">
+                    <option value="Pending">Pending</option>
+                    <option value="Confirmed">Confirm</option>
+                    <option value="Cancelled">Cancel</option>
+                  </select>
+                </div>
+                <div *ngIf="booking.booking_status == 'Confirmed' ">
+                  <select class="w3-select w3-border" name="booking_status"
+                    (change)="onChangeStatus($event, booking.booking_id)">
+                    <option value="Confirmed">Confirm</option>
+                    <option value="Check-In">Check-In</option>
+                    <option value="Cancelled">Cancel</option>
+                  </select>
+                </div>
+                <div *ngIf="booking.booking_status == 'Check-In' ">
+                  <select class="w3-select w3-border" name="booking_status"
+                    (change)="onChangeStatus($event, booking.booking_id)">
+                    <option value="Check-In">Check-In</option>
+                    <option value="Check-Out">Check-Out</option>
+                    <option value="Cancelled">Cancel</option>
+                  </select>
+                </div>
+                <div *ngIf="booking.booking_status == 'Cancelled' ">
+                  {{booking.booking_status}}
+                </div>
+                <div *ngIf="booking.booking_status == 'Check-Out' ">
+                  {{booking.booking_status}}
+                </div>
               </td>
             </tr>
           </table>
@@ -63,7 +96,11 @@
     </div>
   </div>
 
-  <script>
+  <div *ngFor="let booking of bookings">
+    {{booking.booking_id}}
+  </div>
+
+  <!-- <script>
     // Slideshow
     var slideIndex = 1;
     showDivs(slideIndex);
@@ -91,7 +128,7 @@
       x[slideIndex - 1].style.display = "block";
       dots[slideIndex - 1].className += " w3-white";
     }
-  </script>
+  </script> -->
 
 </body>
 

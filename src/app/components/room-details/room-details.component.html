@@ -13,7 +13,7 @@
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-      <a href="#home" class="w3-bar-item w3-button"><b>NIMS</b> HOTEL</a>
+      <a routerLink="/main" class="w3-bar-item w3-button"><b>NIMS</b> HOTEL</a>
       <!-- Float links to the right. Hide them on small screens -->
       <div class="w3-right w3-hide-small">
         <a routerLink="/" class="w3-bar-item w3-button">Home</a>
@@ -30,49 +30,43 @@
     <br><br>
     <div class="w3-container w3-padding-32" id="contact">
       <div class="w3-content w3-padding " style="max-width:1200px">
-        <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">BOOKING</h1>
-        <div class="w3-container w3-card-4 w3-light-grey" target="_blank"><br>
-
-          <div class="w3-row w3-border">
-            <div class="w3-content w3-display-container w3-center">
-              <img class="mySlides" src="img_snowtops.jpg" style="width:100%">
-              <img class="mySlides" src="img_lights.jpg" style="width:100%">
-              <img class="mySlides" src="img_mountains.jpg" style="width:100%">
-              <img class="mySlides" src="img_forest.jpg" style="width:100%">
-
-              <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-              <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">ROOM DETAILS</h1>
+        <div class="w3-container w3-card-4 w3-light-grey"><br>
+          <h2 class="w3-center">ROOM NAME</h2><br>
+          <div class="w3-row-padding">
+            <div class="w3-col l4 m6 w3-margin-bottom">
+              <div class="w3-display-container">
+                <img src="https://i.ibb.co/0XssRs8/ROOM-OO-MAIN-SUITE-KING.jpg" alt="House" style="width: 100%" />
+              </div>
             </div>
-
-            <div class="w3-half w3-container w3-blue w3-border">
-              <h5>w3-half</h5>
-              <p>The w3-half class uses half (50%) of the screen window.</p>
-              <p>On small screens (max 600 pixels) it automatically resizes to full screen width.</p>
+            <div class="w3-col l4 m6 w3-margin-bottom">
+              <div class="w3-display-container">
+                <img src="https://i.ibb.co/8dBRXwX/ROOM-OO-MAIN-SUITE-KING-1.jpg" alt="House" style="width: 100%" />
+              </div>
             </div>
-            <div class="w3-half w3-container">
-              <h5>w3-half</h5>
+            <div class="w3-col l4 m6 w3-margin-bottom">
+              <div class="w3-display-container">
+                <img src="https://i.ibb.co/3f7QjYT/ROOM-OO-MAIN-SUITE-KING-2.jpg" alt="House" style="width: 100%" />
+              </div>
+            </div>
+          </div><br>
+
+          <div class="w3-row w3-border w3-center">
+
+            <div class="w3-half w3-container "><br>
+              <h2>Room Name&nbsp;(Room Type)</h2><br>
+              <p>Room Description</p>
+            </div>
+            <div class="w3-half w3-container"><br>
+              <h2 class="w3-center">Room Price : RM 1500</h2>
+              <div class="w3-center">
+                <button class="w3-button w3-black w3-section" type="submit">
+                  <i class="fa fa-paper-plane"></i> BOOK NOW</button>
+              </div>
+
             </div>
           </div>
-
-          <label>Username :</label><br>
-          <input class="w3-input w3-border" type="text" placeholder="Username" required name="username"><br>
-
-          <label>Password :</label><br>
-          <input class="w3-input w3-border" type="text" placeholder="Password" required name="password"><br>
-
-
-          <button class="w3-button w3-black w3-section" type="submit">
-            <i class="fa fa-paper-plane"></i> SUBMIT</button>
-          <div class="w-full text-center p-t-55">
-            <span class="txt2">
-              Not a member?
-            </span>
-
-            <a routerLink="/signup" class="txt2 bo1">
-              Sign up now
-            </a>
-            <br><br>
-          </div>
+          <br><br>
         </div>
       </div>
     </div>
