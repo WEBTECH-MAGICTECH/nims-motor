@@ -32,43 +32,34 @@
       <div class="w3-content w3-padding " style="max-width:700px">
         <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">BOOKING</h1>
         <form class="w3-container w3-card-4 w3-light-grey"><br>
-          <label>Booking Date :</label>
-          <input class="w3-input w3-border" type="text" placeholder="Name" required name="booking_date"><br>
+          <label>Room Name :</label>
+          <select class="w3-select w3-border" name="room_name">
+            <option value="Suite King">Suite King</option>
+            <option value="Ocean Suite">Ocean Suite</option>
+            <option value="Super Deluxe">Super Deluxe</option>
+            <option value="Deluxe">Deluxe</option>
+          </select><br><br>
+
+          <label>Chek-In Date :</label>
+          <input class="w3-input w3-border" type="date" prequired name="checkin_date"><br>
 
           <label>Start Date :</label><br>
-          <input class="w3-input w3-border" type="text" placeholder="Email" required name="email"><br>
+          <input class="w3-input w3-border" type="date"  required name="	checkout_date"><br>
 
-          <label>End Date :</label><br>
-          <input class="w3-input w3-border" type="text" placeholder="Phone" required name="phone"><br>
-
-          <label>Booking Status :</label><br>
-          <input class="w3-input w3-border" type="text" placeholder="Username" required name="username"><br>
-
-          <label>Password :</label><br>
-          <input class="w3-input w3-border" type="password" placeholder="Password" required name="password"><br>
-
-          <label>Gender :</label><br>
-          <select class="w3-select w3-border" name="gender">
-            <option value="Female">Female</option>
-            <option value="Male">Male</option>
+          <label>Payment Type :</label><br>
+          <input class="w3-input w3-border" type="text" placeholder="Phone" required name="payment_type"><br>
+          <select class="w3-select w3-border" name="room_name">
+            <option value="Suite King">Credit Card</option>
+            <option value="Ocean Suite">Online Banking</option>
+            <option value="Super Deluxe">Cash</option>
           </select><br><br>
 
-          <label>User Type :</label><br>
-          <select class="w3-select w3-border" name="user_type">
-            <option value="Customer">Customer</option>
-            <option value="Staff">Staff</option>
-          </select><br><br>
+          <label>Amount :</label><br>
+          <input class="w3-input w3-border" type="text" placeholder="Amount" required name="amount"><br>
 
           <div class="w3-center">
             <button class="w3-button w3-black w3-section" type="submit">
               <i class="fa fa-paper-plane"></i> SUBMIT</button><br>
-            <span class="txt2">
-              Already have an account?
-            </span>
-
-            <a class="txt2 bo1">
-              Book Now
-            </a><br><br>
           </div>
         </form>
       </div>
