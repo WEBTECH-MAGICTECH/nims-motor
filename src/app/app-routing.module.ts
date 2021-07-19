@@ -13,6 +13,7 @@ import { BookingHistoryComponent } from './components/booking-history/booking-hi
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
+  {path: '', component: MainPageComponent},
   {path: 'main', component: MainPageComponent},
   {path: 'adminmain', component: AdminMainPageComponent},
   {path: 'adminmanagebooking', component: AdminManageBookingComponent},
@@ -26,7 +27,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
