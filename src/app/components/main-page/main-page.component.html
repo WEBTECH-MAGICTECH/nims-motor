@@ -105,23 +105,37 @@
           <img src="https://i.ibb.co/CPFQ6cW/OO-9.jpg" alt="House" style="width: 100%" />
         </div>
       </div>
-    </div>
+    </div><br>
 
     <!-- About Section -->
-    <div class="w3-container w3-padding-32 w3-center" id="about">
+    
+    <div class="w3-container w3-padding-32 w3-center w3-light-grey"  id="about">
       <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">
         ABOUT
       </h1>
-      <h3>YOUR ESCAPE AWAITS</h3>
-      <p>
-        At home in the world's most inspiring locations, hand-picked for exceptional beauty and unique cultural
-        charm,<br>
-        NIMS HOTEL are havens of outstanding style and service that place you in the heart of<br>
-        every fascinating environment. With incredible tailored experiences across beach, nature, and urban
-        locations,<br>
-        and spectacular spaces to simply 'be'; unforgettable moments begin at NIMS HOTEL.<br>
-      </p>
+      <div class="w3-content w3-padding " style="max-width:1200px">
+      <div class="w3-row">
+        <div class="w3-half w3-container" >
+          <div class="container">
+            <div class="w3-center">
+              <img src="https://i.ibb.co/TH0f8dG/SLIDE-2.jpg" alt="House" style="width: 100%" />
+            </div>
+          </div>
+        </div>
+        <div class="w3-half w3-container "><br><br><br>
+          <h2>YOUR ESCAPE AWAITS</h2>
+          <p class="w3-center"><i>
+            At home in the world's most inspiring locations, hand-picked for exceptional beauty and unique cultural
+            charm, NIMS HOTEL are havens of outstanding style and service that place you in the heart of
+            every fascinating environment. With incredible tailored experiences across beach, nature, and urban
+            locations, and spectacular spaces to simply 'be'; unforgettable moments begin at NIMS HOTEL.<br>
+          </i>
+          </p>
+      
+        </div>
+      </div>
     </div>
+  </div>
 
     <div class="w3-container w3-padding-32" id="rooms">
       <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">
@@ -131,7 +145,6 @@
         <div class="w3-col l3 m6 w3-margin-bottom" *ngFor="let room of rooms">
           <img src="{{ room.room_image_1 }}" alt="House" style="width: 100%" />
           <h2>{{ room.room_name }}</h2>
-          <p class="w3-opacity">Your Tropical Sanctuary</p>
           <p>
             {{ room.room_description }}
           </p>
@@ -143,7 +156,7 @@
       </div>
 
       <!-- Contact Section -->
-      <div class="w3-container w3-padding-32 w3-center" id="contact">
+      <div class="w3-container w3-padding-32 w3-center w3-light-grey" id="contact">
         <h1 class="
               w3-border-bottom w3-border-light-grey w3-padding-16 w3-center
             ">
