@@ -5,6 +5,7 @@ import { UserService } from 'src/app/services/user.service';
 import { Room } from 'src/app/models/room';
 import { RoomService } from 'src/app/services/room.service';
 import { Router } from '@angular/router';
+import { state } from '@angular/animations';
 
 @Component({
   selector: 'app-main-page',
@@ -32,12 +33,9 @@ export class MainPageComponent implements OnInit {
     private route: Router
     ) {
     this.user = this.storageHelper.getUser();
-
   }
 
   ngOnInit(): void {
-    // console.log(this.user);
-    // this.test();
     this.onLoadPage();
   }
 
@@ -59,8 +57,16 @@ export class MainPageComponent implements OnInit {
     );
   }
 
-  onSubmit(){
-
+  onClickBook(room: Room) {
+    if (!this.user) {
+      alert('Please login to book');
+      this.route.navigate(['/signin']);
+    }
+    else {
+      this.route.navigate(['/roomdetails']);
+      localStorage.setItem('currentRoom', JSON.stringify(room));
+      this.storageHelper.room = room;
+    }
   }
 
 }

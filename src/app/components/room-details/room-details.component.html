@@ -26,27 +26,27 @@
   <!-- Page content -->
   <div class="w3-content w3-padding" style="max-width:1564px">
 
-    <!-- Contact Section -->
+    <!-- Room Details Section -->
     <br><br>
-    <div class="w3-container w3-padding-32" id="contact">
+    <div class="w3-container w3-padding-32">
       <div class="w3-content w3-padding " style="max-width:1200px">
-        <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">ROOM DETAILS</h1>
+        <h1 class="w3-padding-16 w3-center">ROOM DETAILS</h1>
         <div class="w3-container w3-card-4 w3-light-grey"><br>
-          <h2 class="w3-center">ROOM NAME</h2><br>
+          <h2 class="w3-center">{{ room.room_name }}</h2>
           <div class="w3-row-padding">
             <div class="w3-col l4 m6 w3-margin-bottom">
               <div class="w3-display-container">
-                <img src="https://i.ibb.co/0XssRs8/ROOM-OO-MAIN-SUITE-KING.jpg" alt="House" style="width: 100%" />
+                <img src="{{ room.room_image_1 }}" alt="House" style="width: 100%" />
               </div>
             </div>
             <div class="w3-col l4 m6 w3-margin-bottom">
               <div class="w3-display-container">
-                <img src="https://i.ibb.co/8dBRXwX/ROOM-OO-MAIN-SUITE-KING-1.jpg" alt="House" style="width: 100%" />
+                <img src="{{ room.room_image_2 }}" alt="House" style="width: 100%" />
               </div>
             </div>
             <div class="w3-col l4 m6 w3-margin-bottom">
               <div class="w3-display-container">
-                <img src="https://i.ibb.co/3f7QjYT/ROOM-OO-MAIN-SUITE-KING-2.jpg" alt="House" style="width: 100%" />
+                <img src="{{ room.room_image_3 }}" alt="House" style="width: 100%" />
               </div>
             </div>
           </div><br>
@@ -54,13 +54,13 @@
           <div class="w3-row w3-border w3-center">
 
             <div class="w3-half w3-container "><br>
-              <h2>Room Name&nbsp;(Room Type)</h2><br>
-              <p>Room Description</p>
+              <h2>{{ room.room_name }}&nbsp;(Room Type)</h2><br>
+              <p>{{ room.room_description }}</p>
             </div>
             <div class="w3-half w3-container"><br>
-              <h2 class="w3-center">Room Price : RM 1500</h2>
+              <h2 class="w3-center">Room Price : RM {{ room.room_price}}</h2>
               <div class="w3-center">
-                <button class="w3-button w3-black w3-section" type="submit">
+                <button class="w3-button w3-black w3-section" (click)="onClickBook()">
                   <i class="fa fa-paper-plane"></i> BOOK NOW</button>
               </div>
 

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<title>NIMS HOTEL</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="icon"
+  href="https://png.pngtree.com/png-clipart/20191123/original/pngtree-hotel-building-vector-illustration-with-simple-design-hotel-icon-png-image_5194507.jpg" />
+
+<body>
+
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <a routerLink="/main" class="w3-bar-item w3-button"><b>NIMS</b> HOTEL</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+        <a routerLink="/main" class="w3-bar-item w3-button">Home</a>
+        <!-- <a href="/src/app/app.component.html" class="w3-bar-item w3-button">Home</a> -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Page content -->
+  <div class="w3-content w3-padding" style="max-width:1564px">
+
+    <!-- Booking History Section -->
+    <br><br>
+    <div class="w3-container w3-padding-32">
+      <div class="w3-content w3-padding " style="max-width:1000px">
+        <h1 class="w3-padding-16 w3-center">BOOKING HISTORY</h1>
+        <div class="w3-container w3-card-4 w3-light-grey w3-cente"><br>
+          <table class="w3-center">
+            <tr>
+              <th>No.</th>
+              <th>Booking Id</th>
+              <th>Room Name</th>
+              <th>Check-In</th>
+              <th>Check-Out</th>
+              <th>Payment</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+            <tr *ngFor="let booking of bookings">
+              <td class="w3-center counter"></td>
+              <td class="w3-center">{{ booking.booking_id }}</td>
+              <td>{{ booking.room_name }}</td>
+              <td>{{ booking.checkin_date | date}}</td>
+              <td>{{ booking.checkout_date | date }}</td>
+              <td>{{ booking.payment_type }}</td>
+              <td>RM {{ booking.amount }}</td>
+              <td>{{ booking.booking_status }}</td>
+              <td>
+                <div *ngIf="booking.booking_status == 'Pending'">
+                  <button type="button" (click)="onClickCancel(booking.booking_id)">Cancel</button>
+                </div>
+                <div *ngIf="booking.booking_status == 'Cancelled'">
+                </div>
+                <div *ngIf="booking.booking_status == 'Check-In'">
+                </div>
+                <div *ngIf="booking.booking_status == 'Check-Out'">
+                </div>
+                <div *ngIf="booking.booking_status == 'Confirmed'">
+                </div>
+              </td>
+            </tr>
+          </table>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = x.length }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      x[slideIndex - 1].style.display = "block";
+    }
+  </script>
+
+
+  <!-- End page content -->
+</body>
+
+</html>

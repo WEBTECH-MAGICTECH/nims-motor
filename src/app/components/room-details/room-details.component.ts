@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Room } from 'src/app/models/room';
 import { RoomService } from 'src/app/services/room.service';
+import { StorageHelperService } from 'src/app/services/storage-helper.service';
 
 @Component({
   selector: 'app-room-details',
@@ -18,21 +21,29 @@ export class RoomDetailsComponent implements OnInit {
   room_image_2: string = '';
   room_image_3: string = '';
 
+  rooms: Room[] = [];
+  room: Room = new Room();
+
   //Dependency-Injection
   constructor(
     private roomService: RoomService,
-    private route: Router
+    private route: Router,
+    private aRoute: ActivatedRoute,
+    private storageHelper: StorageHelperService
   ) {}
 
   ngOnInit(): void {
+    this.onLoadPage();
   }
 
-  onSubmit(){
-
+  onLoadPage() {
+    this.room = this.storageHelper.getCurrentRoom();
+    if(this.room == null || this.room == undefined || this.room == '') {
+      this.route.navigate(['/main']);
+    }
   }
 
-  onPage(){
-
+  onClickBook() {
+    this.route.navigate(['/booking']);
   }
-
 }
