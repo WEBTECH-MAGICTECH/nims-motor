@@ -8,7 +8,7 @@ import { Booking } from '../models/booking';
   providedIn: 'root'
 })
 export class BookingService {
-    baseUrl: string = '/nhapi/booking';
+    baseUrl: string = 'https://magictech.ga/class/nhapi/booking';
 
     constructor(private http:HttpClient) { }
 
