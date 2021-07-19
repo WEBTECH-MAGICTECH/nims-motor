@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-admin-main-page',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminMainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onClickSignOut() {
+    this.userService.onLogout();
+    this.route.navigate(['/main']);
   }
 
 }

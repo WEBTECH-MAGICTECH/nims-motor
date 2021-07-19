@@ -42,10 +42,16 @@ export class AdminManageCustomerComponent implements OnInit {
     );
   }
 
-  onClickDelete(id?: number) {
-    this.userService.deleteUser(id).subscribe();
-    // this.route.navigate(['adminmanagecustomer']);
-    window.location.reload();
+  onClickDelete(id?: number, name?: string) {
+    if(confirm("Are you sure to delete "+name)) {
+      this.userService.deleteUser(id).subscribe();
+      // this.route.navigate(['adminmanagecustomer']);
+      window.location.reload();
+    }
   }
 
+  onClickSignOut() {
+    this.userService.onLogout();
+    this.route.navigate(['/main']);
+  }
 }

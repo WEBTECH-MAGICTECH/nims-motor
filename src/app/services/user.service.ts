@@ -38,11 +38,29 @@ export class UserService {
       .pipe(
         map(user => {
           console.log(user);
-
           return user;
         }),
         retry(3),
         catchError(this.deleteError)
+      );
+  }
+
+  updateUser(userid?: string, user?: User): Observable<User> {
+    console.log(userid);
+    console.log(user);
+    console.log(this.baseUrl+'/'+userid);
+
+    return this.http.put<User>(this.baseUrl+'/'+userid, user)
+      .pipe(
+        map(user => {
+          console.log(user);
+          localStorage.removeItem('auth_user');
+          localStorage.setItem('auth_user', JSON.stringify(user));
+          return user;
+          // return user
+        }),
+        retry(3),
+        catchError(this.handleError)
       );
   }
 
@@ -55,6 +73,8 @@ export class UserService {
 
   onLogout() {
     localStorage.removeItem('auth_user');
+    localStorage.removeItem('bookings');
+    localStorage.removeItem('currentRoom');
   }
 
   private handleError(error: HttpErrorResponse){

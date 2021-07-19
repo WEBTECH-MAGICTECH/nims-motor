@@ -23,6 +23,7 @@ import { AdminMainPageComponent } from './components/admin/admin-main-page/admin
 import { AdminManageBookingComponent } from './components/admin/admin-manage-booking/admin-manage-booking.component';
 import { AdminManageCustomerComponent } from './components/admin/admin-manage-customer/admin-manage-customer.component';
 import { BookingComponent } from './components/booking/booking.component';
+import { BookingHistoryComponent } from './components/booking-history/booking-history.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -37,6 +38,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
     AdminManageBookingComponent,
     AdminManageCustomerComponent,
     BookingComponent,
+    BookingHistoryComponent,
     RoomDetailsComponent,
   ],
   imports: [

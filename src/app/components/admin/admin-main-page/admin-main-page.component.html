@@ -7,71 +7,76 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-<body>
-    <!-- Links (sit on top) -->
-    <div class="w3-top">
-        <div class="w3-row w3-large w3-light-grey">
-            <div class="w3-col s3">
-                <a routerLink="/adminmain" class="w3-button w3-block">Home</a>
-            </div>
-            <div class="w3-col s3">
-                <a routerLink="/adminmanagebooking" class="w3-button w3-block">Booking</a>
-            </div>
-            <div class="w3-col s3">
-                <a routerLink="/adminmanagecustomer" class="w3-button w3-block">Customer</a>
-            </div>
-            <div class="w3-col s3">
-                <a routerLink="#" class="w3-button w3-block">Sign Out</a>
-            </div>
-        </div>
+<body style="background-color:rgb(129, 153, 156);">
+  <!-- Links (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-row w3-large w3-light-grey">
+      <div class="w3-col s3">
+        <a routerLink="/adminmain" class="w3-button w3-block">Home</a>
+      </div>
+      <div class="w3-col s3">
+        <a routerLink="/adminmanagebooking" class="w3-button w3-block">Booking</a>
+      </div>
+      <div class="w3-col s3">
+        <a routerLink="/adminmanagecustomer" class="w3-button w3-block">Customer</a>
+      </div>
+      <div class="w3-col s3" (click)="onClickSignOut()">
+        <a class="w3-button w3-block">Sign Out</a>
+      </div>
     </div>
-    <br /><br />
+  </div>
+  <br /><br />
 
-    <!-- Content -->
-    <div class="w3-content" style="max-width: 1100px; margin-top: 80px; margin-bottom: 80px">
+  <!-- Content -->
+  <div class="w3-content" style="max-width:1200px;margin-top:20px;margin-bottom:30px">
 
-        <!-- Grid -->
-        <div class="w3-row w3-container">
-            <div class="w3-center w3-padding-64">
-                <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Our Team</span>
-            </div>
-            <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
-                <h3>Hasan Mubarak</h3>
-                <h5>Angular Developer</h5>
-                <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse
-                    sodales pellentesque elementum.
-                </p>
-            </div>
-
-            <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
-                <h3>Farizul Imran</h3>
-                <h5>Back-End Developer</h5>
-                <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse
-                    sodales pellentesque elementum.
-                </p>
-            </div>
-
-            <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
-                <h3>Siti Hamidah</h3>
-                <h5>Front-End Developer</h5>
-                <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse
-                    sodales pellentesque elementum.
-                </p>
-            </div>
-
-            <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
-                <h3>Nur Atiqah</h3>
-                <h5>Front-End Developer</h5>
-                <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse
-                    sodales pellentesque elementum.
-                </p>
-            </div>
-        </div>
+    <!-- Image -->
+    <div class="w3-center w3-padding-15">
+      <h1>N I M S H O T E L</h1>
     </div>
+
+    <!-- Grid -->
+    <div class="w3-row w3-container">
+      <div class="w3-center w3-padding-64">
+        <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Our Team</span>
+      </div>
+      <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
+        <h3>Hasan Mubarak</h3>
+        <h5>Angular Developer</h5>
+        <p>
+          Designing and developing user interfaces using angularJS best practices. Adapting interface using the latest
+          front-end technologies.
+        </p>
+      </div>
+
+      <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
+        <h3>Farizul Imran</h3>
+        <h5>Back-End Developer</h5>
+        <p>
+          Back end developers are responsible for creating and maintaining technology at the back end of a website (the
+          server, database and application).
+        </p>
+      </div>
+
+      <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
+        <h3>Siti Hamidah</h3>
+        <h5>Front-End Developer</h5>
+        <p>
+          Use and develop combination of markup languages to write web pages. Write functional requirement documents and
+          specifications.
+        </p>
+      </div>
+
+      <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
+        <h3>Nur Atiqah</h3>
+        <h5>Front-End Developer</h5>
+        <p>
+          Develop functional and appealing web- and mobile-based applications based on usability. Provide website
+          maintenance and enhancements.
+        </p>
+      </div>
+    </div>
+  </div>
 
 </body>
 

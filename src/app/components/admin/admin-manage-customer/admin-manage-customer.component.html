@@ -21,8 +21,8 @@
       <div class="w3-col s3">
         <a routerLink="/adminmanagecustomer" class="w3-button w3-block">Customer</a>
       </div>
-      <div class="w3-col s3">
-        <a routerLink="#" class="w3-button w3-block">Sign Out</a>
+      <div class="w3-col s3" (click)="onClickSignOut()">
+        <a class="w3-button w3-block">Sign Out</a>
       </div>
     </div>
   </div>
@@ -35,9 +35,10 @@
     <!-- Table -->
     <div class="w3-center">
       <div class="w3-row w3-large w3-light-grey" id="corner">
-        <div class="w3-content w3-padding" style="max-width:700px">
-          <table>
+        <div class="w3-content w3-padding" style="max-width:1000px">
+          <table class="w3-center">
             <tr>
+              <th>No</th>
               <th>Id</th>
               <th>Name</th>
               <th>Gender</th>
@@ -47,13 +48,14 @@
               <th>Action</th>
             </tr>
             <tr *ngFor="let user of users">
+              <td class="w3-center counter"></td>
               <td>{{ user.id }}</td>
               <td>{{ user.name }}</td>
               <td>{{ user.gender }}</td>
               <td>{{ user.phone }}</td>
               <td>{{ user.email }}</td>
               <td>{{ user.username }}</td>
-              <td><button type="button" (click)="onClickDelete(user.id)">Delete</button></td>
+              <td><button type="button" (click)="onClickDelete(user.id, user.name)">Delete</button></td>
             </tr>
           </table>
         </div>
