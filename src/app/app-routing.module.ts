@@ -9,6 +9,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { BookingHistoryComponent } from './components/booking-history/booking-history.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'signup', component: SignUpComponent},
   {path: 'roomdetails', component: RoomDetailsComponent},
   {path: 'booking', component: BookingComponent},
+  {path: 'booking-history', component: BookingHistoryComponent},
   {path: 'profile', component: ProfileComponent}
 ];
 
