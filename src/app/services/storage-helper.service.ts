@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Room } from '../models/room';
 import { User } from '../models/user';
 
 @Injectable({
@@ -6,6 +7,7 @@ import { User } from '../models/user';
 })
 export class StorageHelperService {
   user?: User;
+  room: Room = new Room();
 
   constructor() { }
 
@@ -18,5 +20,10 @@ export class StorageHelperService {
 
     // return this.user;
     return userJson !== null ? JSON.parse(userJson) : null;
+  }
+
+  getCurrentRoom() {
+    const roomJson = localStorage.getItem('currentRoom');
+    return roomJson !== null ? JSON.parse(roomJson) : null;
   }
 }

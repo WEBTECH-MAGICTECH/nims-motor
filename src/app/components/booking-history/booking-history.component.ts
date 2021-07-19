@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { StorageHelperService } from 'src/app/services/storage-helper.service';
 import { Router } from '@angular/router';
 import { windowTime } from 'rxjs/operators';
 import { BookingService } from 'src/app/services/booking.service';
@@ -7,33 +9,33 @@ import { Booking } from 'src/app/models/booking';
 import { User } from 'src/app/models/user';
 
 @Component({
-  selector: 'app-admin-manage-booking',
-  templateUrl: './admin-manage-booking.component.html',
-  styleUrls: ['./admin-manage-booking.component.css']
+  selector: 'app-booking-history',
+  templateUrl: './booking-history.component.html',
+  styleUrls: ['./booking-history.component.css']
 })
-export class AdminManageBookingComponent implements OnInit {
+export class BookingHistoryComponent implements OnInit {
 
   booking_status?: string;
 
   bookings: Booking[] = [];
+  user: User;
 
   //Dependency-Injection
   constructor(
     private bookingService: BookingService,
-    private route: Router,
-    private userService: UserService
-  ) { }
+    private userService: UserService,
+    private storageHelperService: StorageHelperService,
+    private route: Router
+  ) {
+    this.user = this.storageHelperService.getUser();
+  }
 
   ngOnInit(): void {
     this.onLoadPage();
   }
 
-  onSubmit(){
-
-  }
-
   onLoadPage() {
-    this.bookingService.getBookingList().subscribe(
+    this.bookingService.getUserBookingList(this.user.id?.toString()).subscribe(
       bookings => {
         console.log(bookings)
         this.bookings = bookings;
@@ -42,18 +44,16 @@ export class AdminManageBookingComponent implements OnInit {
   }
 
   onChangeStatus(event: any, booking_id?: number) {
-    // console.log(event.target.value);
     this.booking_status = event.target.value;
     console.log(this.booking_status);
 
     this.bookingService.updateBooking({booking_status: this.booking_status}, booking_id).subscribe();
     window.location.reload();
-
   }
 
-  onClickSignOut() {
-    this.userService.onLogout();
-    this.route.navigate(['/main']);
+  onClickCancel(booking_id?: number) {
+    this.bookingService.updateBooking({booking_status: 'Cancelled'}, booking_id).subscribe();
+    window.location.reload();
   }
 
 }
