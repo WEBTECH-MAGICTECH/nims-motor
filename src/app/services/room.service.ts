@@ -7,7 +7,7 @@ import { Room } from '../models/room';
   providedIn: 'root'
 })
 export class RoomService {
-  baseUrl: string = '/nhapi/room';
+  baseUrl: string = 'https://magictech.ga/class/nhapi/room';
 
   constructor(private http:HttpClient) { }
 

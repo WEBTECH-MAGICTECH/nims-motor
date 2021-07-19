@@ -8,7 +8,7 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl: string = '/nhapi/user';
+  baseUrl: string = 'https://magictech.ga/class/nhapi/user';
 
   constructor(private http:HttpClient) { }
 
