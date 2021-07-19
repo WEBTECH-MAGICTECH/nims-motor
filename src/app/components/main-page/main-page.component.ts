@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { StorageHelperService } from 'src/app/services/storage-helper.service';
 import { UserService } from 'src/app/services/user.service';
@@ -6,6 +6,7 @@ import { Room } from 'src/app/models/room';
 import { RoomService } from 'src/app/services/room.service';
 import { Router } from '@angular/router';
 import { state } from '@angular/animations';
+import { ViewportScroller } from '@angular/common'
 
 @Component({
   selector: 'app-main-page',
@@ -25,12 +26,15 @@ export class MainPageComponent implements OnInit {
 
   rooms: Room[] = [];
 
+  @ViewChild('room') public room?:ElementRef;
+
   //Dependency-Injection
   constructor(
     private storageHelper: StorageHelperService,
     private userService: UserService,
     private roomService: RoomService,
-    private route: Router
+    private route: Router,
+    private viewportScroller: ViewportScroller
     ) {
     this.user = this.storageHelper.getUser();
   }
@@ -39,8 +43,20 @@ export class MainPageComponent implements OnInit {
     this.onLoadPage();
   }
 
-  test() {
-    console.log(!this.user ? 'it is null' : 'not null');
+  moveToRooms() {
+    document.getElementById("rooms")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+  }
+
+  moveToAbout() {
+    document.getElementById("about")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
   }
 
   onSignOut() {
